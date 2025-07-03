@@ -148,3 +148,7 @@ table {
 .title {
   text-wrap: balance;
 }
+
+.section-title {
+  @apply font-semibold text-2xl mb-8 tracking-tighter;
+}
