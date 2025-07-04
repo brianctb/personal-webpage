@@ -4,7 +4,7 @@ export const metadata = {
   title: 'My Blog',
 }
 
-export default function Page() {
+export default function BlogsPage() {
   return (
     <section>
       <h1 className="section-title">{metadata.title}</h1>

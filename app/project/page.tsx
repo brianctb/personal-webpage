@@ -1,11 +1,14 @@
+import { ProjectPosts } from "app/components/projects"
+
 const metadata = {
-    title: 'My Portfolio',
+    title: 'My Projects',
 }
 
-export default function Page() {
+export default function ProjectsPage() {
     return (
         <section>
             <h1 className="section-title">{metadata.title}</h1>
+            <ProjectPosts />
         </section>
     )
 }
