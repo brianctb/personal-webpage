@@ -5,10 +5,11 @@ import { Project } from "app/interface/project";
 import { formatDate } from "app/utils/date/format";
 
 export const ProjectCard = ({ project }: { project: Project }) => {
+
     const [isExpanded, setIsExpanded] = useState(false);
 
     return (
-        <div className="mb-4 pb-4">
+        <article className="mb-4 p-4 rounded-2xl bg-neutral-900">
             <div className="flex flex-col items-center justify-center">
                 <div className="flex w-full">
                     <div className="flex-1 flex justify-center">
@@ -18,7 +19,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
                             className="w-30 h-20"
                         />
                     </div>
-                    <div className="flex-1 flex justify-center items-center">
+                    <div className="flex-2 flex justify-center items-center">
                         <div className="flex flex-col items-center">
                             <p className="text-xl text-center text-neutral-900 dark:text-neutral-100 tracking-tight font-medium">
                                 {project.slug}
@@ -44,7 +45,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
                             {project.techStack.map((tech) => (
                                 <span
                                     key={tech}
-                                    className="px-4 py-2 rounded-full font-medium bg-neutral-700 text-neutral-400  min-w-[100px] text-center"
+                                    className="px-4 py-2 rounded-full font-medium bg-emerald-900/70 text-neutral-400  min-w-[100px] text-center"
                                 >
                                     {tech}
                                 </span>
@@ -67,6 +68,6 @@ export const ProjectCard = ({ project }: { project: Project }) => {
             >
                 <span>{isExpanded ? '▲' : '▼'}</span>
             </button>
-        </div>
+        </article>
     );
 };
