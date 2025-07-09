@@ -94,7 +94,10 @@ export default async function Blog({ params }) {
           <p className="title font-semibold text-2xl mb-4">
             <span>Technologies</span>
           </p>
-          <PillGroup items={post.metadata.technologies} />
+          <PillGroup
+            items={post.metadata.technologies}
+            pillClassName='bg-emerald-900/70'
+          />
         </>
       )}
       <article className="prose">

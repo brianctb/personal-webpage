@@ -45,6 +45,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
                         <PillGroup
                             items={project.techStack}
                             className='lg: justify-center'
+                            pillClassName='bg-emerald-900/70'
                         />
                         <p className="mt-2 w-full text-xl text-left lg:text-center text-neutral-700 dark:text-neutral-300">
                             {"Duties"}
