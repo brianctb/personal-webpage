@@ -1,5 +1,5 @@
 export interface Project {
-  slug: string;
+  name: string;
   description: string;
   techStack: string[];
   duties: string[];
@@ -10,7 +10,7 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    slug: "AI Storyteller",
+    name: "AI Storyteller",
     description: "Placeholder for AI Storyteller project description.",
     publishedAt: "2025-04-30",
     duties: ["Developed a web application that generates stories using AI."],
@@ -18,7 +18,7 @@ export const projects: Project[] = [
     imagePath: "question_mark.png",
   },
   {
-    slug: "Canada Employment Visualization",
+    name: "Canada Employment Visualization",
     description: "Placeholder for Canada Employment Visualization project description.",
     publishedAt: "2023-06-15",
     duties: ["Created a data visualization tool to analyze employment trends in Canada."],

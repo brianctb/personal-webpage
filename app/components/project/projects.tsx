@@ -1,5 +1,4 @@
 import { projects } from "app/interface/project";
-import { formatDate } from "app/utils/date/format";
 import { ProjectCard } from "./projectCard";
 
 
@@ -12,7 +11,7 @@ export const ProjectPosts = () => {
                 }
                 return 1;
             }).map((projectData) => (
-                <ProjectCard key={projectData.slug} project={projectData} />
+                <ProjectCard key={projectData.name} project={projectData} />
             ))
             }
         </div>

@@ -15,14 +15,14 @@ export const ProjectCard = ({ project }: { project: Project }) => {
                     <div className="flex-1 flex justify-center">
                         <img
                             src={`/image/${project.imagePath}`}
-                            alt={project.slug}
+                            alt={project.name}
                             className="w-30 h-20"
                         />
                     </div>
                     <div className="flex-2 flex justify-center items-center">
                         <div className="flex flex-col items-center">
                             <p className="text-xl text-center text-neutral-900 dark:text-neutral-100 tracking-tight font-medium">
-                                {project.slug}
+                                {project.name}
                             </p>
                             <p className="text-neutral-600 dark:text-neutral-400 w-[100px] tabular-nums">
                                 {formatDate(project.publishedAt, false)}
