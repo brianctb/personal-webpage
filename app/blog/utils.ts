@@ -5,6 +5,8 @@ type Metadata = {
   title: string
   publishedAt: string
   summary: string
+  technologies: string[]
+  articleLink?: string
   image?: string
 }
 
@@ -18,9 +20,16 @@ function parseFrontmatter(fileContent: string) {
 
   frontMatterLines.forEach((line) => {
     let [key, ...valueArr] = line.split(': ')
+    let keyTrimmed = key.trim() as keyof Metadata
     let value = valueArr.join(': ').trim()
-    value = value.replace(/^['"](.*)['"]$/, '$1') // Remove quotes
-    metadata[key.trim() as keyof Metadata] = value
+    value = value.replace(/^['"](.*)['"]$/, '$1')
+    
+    if (keyTrimmed === 'technologies') {
+      metadata.technologies = value.slice(1, -1).split(',').map(item => item.trim())
+    } 
+    else {
+      metadata[keyTrimmed] = value
+    }
   })
 
   return { metadata: metadata as Metadata, content }

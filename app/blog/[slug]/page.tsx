@@ -3,6 +3,7 @@ import { CustomMDX } from 'app/components/mdx'
 import { getBlogPosts } from 'app/blog/utils'
 import { formatDate } from 'app/utils/date/format'
 import { baseUrl } from 'app/sitemap'
+import { PillGroup } from 'app/components/pillGroup'
 
 export async function generateStaticParams() {
   let posts = getBlogPosts()
@@ -22,7 +23,6 @@ export async function generateMetadata({ params }) {
   let {
     title,
     publishedAt: publishedTime,
-    summary: description,
     image,
   } = post.metadata
   let ogImage = image
@@ -31,10 +31,8 @@ export async function generateMetadata({ params }) {
 
   return {
     title,
-    description,
     openGraph: {
       title,
-      description,
       type: 'article',
       publishedTime,
       url: `${baseUrl}/blog/${post.slug}`,
@@ -47,7 +45,6 @@ export async function generateMetadata({ params }) {
     twitter: {
       card: 'summary_large_image',
       title,
-      description,
       images: [ogImage],
     },
   }
@@ -73,7 +70,6 @@ export default async function Blog({ params }) {
             headline: post.metadata.title,
             datePublished: post.metadata.publishedAt,
             dateModified: post.metadata.publishedAt,
-            description: post.metadata.summary,
             image: post.metadata.image
               ? `${baseUrl}${post.metadata.image}`
               : `/og?title=${encodeURIComponent(post.metadata.title)}`,
@@ -93,6 +89,14 @@ export default async function Blog({ params }) {
           {formatDate(post.metadata.publishedAt)}
         </p>
       </div>
+      {post.metadata.technologies?.length > 0 && (
+        <>
+          <p className="title font-semibold text-2xl mb-4">
+            <span>Technologies</span>
+          </p>
+          <PillGroup items={post.metadata.technologies} />
+        </>
+      )}
       <article className="prose">
         <CustomMDX source={post.content} />
       </article>

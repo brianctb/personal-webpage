@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Project } from "app/interface/project";
 import { formatDate } from "app/utils/date/format";
+import { PillGroup } from "../pillGroup";
 
 export const ProjectCard = ({ project }: { project: Project }) => {
 
@@ -31,7 +32,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
                     </div>
                 </div>
                 {isExpanded && (
-                    <div className="w-full mt-2 flex flex-col items-center">
+                    <div className="w-full mt-2 flex flex-col">
                         <p className="mt-2 w-full text-xl text-left lg:text-center text-neutral-300">
                             {"Description"}
                         </p>
@@ -41,16 +42,10 @@ export const ProjectCard = ({ project }: { project: Project }) => {
                         <p className="mt-2 w-full text-xl text-left lg:text-center text-neutral-300">
                             {"Technologies"}
                         </p>
-                        <div className="mt-2 flex flex-wrap gap-2 lg:justify-center">
-                            {project.techStack.map((tech) => (
-                                <span
-                                    key={tech}
-                                    className="px-4 py-2 rounded-full font-medium bg-emerald-900/70 text-neutral-400  min-w-[100px] text-center"
-                                >
-                                    {tech}
-                                </span>
-                            ))}
-                        </div>
+                        <PillGroup
+                            items={project.techStack}
+                            className='lg: justify-center'
+                        />
                         <p className="mt-2 w-full text-xl text-left lg:text-center text-neutral-700 dark:text-neutral-300">
                             {"Duties"}
                         </p>
