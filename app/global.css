@@ -150,5 +150,9 @@ table {
 }
 
 .section-title {
-  @apply font-semibold text-2xl mb-8 tracking-tighter;
+  @apply font-semibold text-2xl tracking-tighter;
+}
+
+.section-paragraph {
+  @apply text-lg;
 }

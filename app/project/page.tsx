@@ -7,7 +7,7 @@ const metadata = {
 export default function ProjectsPage() {
     return (
         <section>
-            <h1 className="section-title">{metadata.title}</h1>
+            <h1 className="section-title mb-4">{metadata.title}</h1>
             <ProjectPosts />
         </section>
     )
