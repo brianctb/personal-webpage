@@ -100,7 +100,7 @@ export default function HomePage() {
       </section>
       <section className="mb-8">
         <h1 className="section-title">Interests</h1>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 mt-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-4 gap-3">
           {interests.map((interest, index) => (
             <div key={index} className={`p-3 rounded-2xl flex items-center justify-center ${interestPillColorScheme[index]}`}>
               <span className="text-xl">{interest.icon}</span>
