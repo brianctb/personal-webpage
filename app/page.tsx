@@ -22,6 +22,7 @@ export default function HomePage() {
   ];
 
   const [skillExpanded, setSkillExpanded] = React.useState(true);
+  const [workExpanded, setWorkExpanded] = React.useState(true);
 
   return (
     <section className="flex flex-col">
@@ -58,22 +59,29 @@ export default function HomePage() {
         )}
       </section>
       <section className="mb-8">
-        <h1 className="section-title">Work Experience</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-          {workExperiences.map((experience, index) => (
-            <div key={index} className="bg-neutral-900/70 p-3 rounded-2xl">
-              <h2 className="font-bold">{experience.position} at {experience.company}</h2>
-              <p className="text-neutral-400">{experience.startDate} - {experience.endDate}</p>
-              {experience.duties && (
-                <ul className="list-disc list-inside text-neutral-400 mt-2">
-                  {experience.duties.map((duty, dutyIndex) => (
-                    <li key={dutyIndex}>{duty}</li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          ))}
+        <div className="flex flex-row items-center gap-3">
+          <h1 className="section-title">Work Experience</h1>
+          <button onClick={() => setWorkExpanded(!workExpanded)}>
+            <span>{workExpanded ? '▲' : '▼'}</span>
+          </button>
         </div>
+        {workExpanded && (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+            {workExperiences.map((experience, index) => (
+              <div key={index} className="bg-neutral-900/70 p-3 rounded-2xl">
+                <h2 className="font-bold">{experience.position} at {experience.company}</h2>
+                <p className="text-neutral-400">{experience.startDate} - {experience.endDate}</p>
+                {experience.duties && (
+                  <ul className="list-disc list-inside text-neutral-400 mt-2">
+                    {experience.duties.map((duty, dutyIndex) => (
+                      <li key={dutyIndex}>{duty}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
       </section>
       <section className="mb-8">
         <h1 className="section-title">Education</h1>
