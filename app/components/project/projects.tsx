@@ -4,7 +4,7 @@ import { ProjectCard } from "./projectCard";
 
 export const ProjectPosts = () => {
     return (
-        <div>
+        <div className="flex flex-col justify-center items-center">
             {projects.sort((a, b) => {
                 if (new Date(a.publishedAt) > new Date(b.publishedAt)) {
                     return -1;

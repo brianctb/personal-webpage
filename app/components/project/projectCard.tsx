@@ -10,7 +10,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
     const [isExpanded, setIsExpanded] = useState(false);
 
     return (
-        <article className="mb-4 p-4 rounded-2xl bg-neutral-900">
+        <article className="mb-4 p-4 rounded-2xl bg-neutral-900 w-full lg:w-2xl">
             <div className="flex flex-col items-center justify-center">
                 <div className="flex w-full">
                     <div className="flex-1 flex justify-center">
