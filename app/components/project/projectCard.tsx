@@ -22,9 +22,20 @@ export const ProjectCard = ({ project }: { project: Project }) => {
                     </div>
                     <div className="flex-2 flex justify-center items-center">
                         <div className="flex flex-col items-center">
-                            <p className="text-xl text-center text-neutral-900 dark:text-neutral-100 tracking-tight font-medium">
-                                {project.name}
-                            </p>
+                            {project.link ? (
+                                <a
+                                    href={project.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-xl text-center text-blue-400 tracking-tight font-medium hover:underline"
+                                >
+                                    {project.name}
+                                </a>
+                            ) : (
+                                <p className="text-xl text-center text-neutral-100 tracking-tight font-medium">
+                                    {project.name}
+                                </p>
+                            )}
                             <p className="text-neutral-600 dark:text-neutral-400 w-[100px] tabular-nums">
                                 {formatDate(project.publishedAt, false)}
                             </p>
@@ -47,14 +58,18 @@ export const ProjectCard = ({ project }: { project: Project }) => {
                             className='lg: justify-center'
                             pillClassName='bg-emerald-900/70'
                         />
-                        <p className="mt-2 w-full text-xl text-left lg:text-center text-neutral-700 dark:text-neutral-300">
-                            {"Duties"}
-                        </p>
-                        <ul className="list-disc list-inside text-neutral-400 w-full text-left lg:text-center">
-                            {project.duties.map((duty, index) => (
-                                <li key={index}>{duty}</li>
-                            ))}
-                        </ul>
+                        {project.duties && project.duties.length > 0 && (
+                            <>
+                                <p className="mt-2 w-full text-xl text-left lg:text-center text-neutral-700 dark:text-neutral-300">
+                                    {"Duties"}
+                                </p>
+                                <ul className="list-disc list-outside pl-5 text-neutral-400 w-full text-left lg:text-center">
+                                    {project.duties.map((duty, index) => (
+                                        <li key={index}>{duty}</li>
+                                    ))}
+                                </ul>
+                            </>
+                        )}
                     </div>
                 )}
             </div>
