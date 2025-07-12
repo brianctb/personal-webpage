@@ -4,49 +4,56 @@ publishedAt: "2024-08-15"
 technologies: [Typescript, AWS, React, Selenium, Python, Pandas]
 ---
 
-In the ever-evolving landscape of software development, the debate between dynamic and static typing continues to be a hot topic. While dynamic typing offers flexibility and rapid development, static typing brings its own set of powerful advantages that can significantly improve the quality and maintainability of code. In this post, we'll explore why static typing is crucial for developers, accompanied by practical examples through markdown code snippets.
+In January 2024, I joined Caracal Technologies as a Co-op Software Engineer for an intensive 8-month term working on the company's core financial reporting platform. This mission-critical system processed millions of transactions daily, generating everything from internal API to complex reconciliation reports for hundreds of clients.
 
-## Improved Code Quality and Safety
+## The Good: Ownership, Collaboration, and Impact
 
-One of the most compelling reasons to use static typing is the improvement it brings to code quality and safety. By enforcing type checks at compile time, static typing catches errors early in the development process, reducing the chances of runtime errors.
+What stood out immediately was the team’s trust and inclusivity. Despite being a co-op, I was given meaningful ownership—whether proposing architectural changes, debugging AWS Lambda functions, or interviewing future co-op candidates.
 
-```ts
-function greet(name: string): string {
-  return `Hello, ${name}!`;
-}
+Some highlights of the experience:
 
-// This will throw an error at compile time, preventing potential runtime issues.
-let message: string = greet(123);
-```
+- **Mentorship mattered**: Other developers reviewed my code but also asked for my input on system design.
 
-## Enhanced Readability and Maintainability
+- **Full-stack exposure**: I touched everything from frontend optimizations to database restructuring.
 
-Static typing makes code more readable and maintainable. By explicitly declaring types, developers provide a clear contract of what the code does, making it easier for others (or themselves in the future) to understand and modify the codebase.
+- **Beyond coding**: I helped refine hiring processes, documented tribal knowledge, and saw how engineering decisions aligned with business needs.
 
-## Facilitates Tooling and Refactoring
+## Challenges: Scaling a System Under Pressure
 
-Modern IDEs leverage static typing to offer advanced features like code completion, refactoring, and static analysis. These tools can automatically detect issues, suggest fixes, and safely refactor code, enhancing developer productivity and reducing the likelihood of introducing bugs during refactoring.
+Of course, no real-world system is perfect. The reporting platform had grown over time, leading to some tough constraints:
 
-```csharp
-// Refactoring example: Renaming a method in C#
-public class Calculator {
-    public int Add(int a, int b) {
-        return a + b;
-    }
-}
+- **Outdated Frontend**: The frontend was built without any framework, and as more features are added, the codebase became hard to manage and scale.
 
-// After refactoring `Add` to `Sum`, all references are automatically updated.
-public class Calculator {
-    public int Sum(int a, int b) {
-        return a + b;
-    }
-}
-```
+- **Manual processes**: Some part of the daily reconciliation involved hours of downloading reports and manual CSV work—error-prone and exhausting.
 
-## Performance Optimizations
+- **Database performance issue**: The database architecture that previously supported our reporting needs efficiently began struggling under increased load.
 
-Static typing can lead to better performance. Since types are known at compile time, compilers can optimize the generated code more effectively. This can result in faster execution times and lower resource consumption.
+## My Contributions: Building for Scale and Efficiency
+
+1. **Optimizing the Frontend**
+
+   - Rebuilt the entire Frontend reporting interface in React + TypeScript.
+
+   - Designed a dynamic file explorer for S3 with secure pre-signed URLs, embedded previews, and one-click downloads.
+
+2. **Automating Pain Points**
+
+   - Built Selenium bots to auto-download reports, saving hours of manual work daily.
+
+   - Created Pandas data pipelines to process refunds, cutting reconciliation time from 8 hours to minutes.
+
+   - Developed a log-scraping tool to extract key events into SQLite for auditing.
+
+3. **Owning the Full Pipeline**
+
+   - Automated CI/CD deployments to S3 + CloudFront, ensuring smooth frontend updates.
+
+   - Documented systems thoroughly to make future maintenance easier.
 
 ## Conclusion
 
-Static typing offers numerous benefits that contribute to the development of robust, efficient, and maintainable software. By catching errors early, enhancing readability, facilitating tooling, and enabling optimizations, static typing is an invaluable asset for developers. As the software industry continues to mature, the importance of static typing in ensuring code quality and performance cannot be overstated. Whether you're working on a large-scale enterprise application or a small project, embracing static typing can lead to better software development outcomes.
+This experience gave me a front-row seat to how reporting systems are built and maintained at scale, with the added responsibility of knowing my work directly impacted the company's ability to serve its clients effectively.
+
+Most importantly, I learned that the best teams invest in their co-ops, giving them responsibility, mentorship, and room to grow.
+
+Another lesson I learnt was that a place that challenges you will leave not just with new skills, but with the confidence to build things that matter.
