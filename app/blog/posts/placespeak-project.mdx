@@ -4,49 +4,54 @@ publishedAt: "2025-05-27"
 technologies: [Flask, OpenAI, Nltk, JavaScript, PostgreSQL]
 ---
 
-In the ever-evolving landscape of software development, the debate between dynamic and static typing continues to be a hot topic. While dynamic typing offers flexibility and rapid development, static typing brings its own set of powerful advantages that can significantly improve the quality and maintainability of code. In this post, we'll explore why static typing is crucial for developers, accompanied by practical examples through markdown code snippets.
+In April 2025, I had the opportunity to collaborate with **PlaceSpeak** and a team of BCIT Computer Systems Technology students as part of the Industry Sponsored Student Projects (ISSP) program.
 
-## Improved Code Quality and Safety
+Check out the full presentation <span className="blue-link">[here](https://blog.placespeak.com/placespeak-analytics-project-with-bcit/)</span>.
 
-One of the most compelling reasons to use static typing is the improvement it brings to code quality and safety. By enforcing type checks at compile time, static typing catches errors early in the development process, reducing the chances of runtime errors.
+PlaceSpeak is a privacy-protected civic network that connects individuals and organizations for meaningful, location-based engagement. Designed to combat bots and trolls, it ensures legitimate feedback to inform policy decisions.
 
-```ts
-function greet(name: string): string {
-  return `Hello, ${name}!`;
-}
+## Our goal
 
-// This will throw an error at compile time, preventing potential runtime issues.
-let message: string = greet(123);
-```
+Our goal was to build an AI-powered analytics system that transforms raw public consultation feedback into meaningful, actionable insights.
 
-## Enhanced Readability and Maintainability
+1. Integrating Nltk for Advanced NLP Analysis
 
-Static typing makes code more readable and maintainable. By explicitly declaring types, developers provide a clear contract of what the code does, making it easier for others (or themselves in the future) to understand and modify the codebase.
+   - Leverage the OpenAI API to perform summary of public feedback and graphs.
 
-## Facilitates Tooling and Refactoring
+2. Designing the Data Processing Pipeline
 
-Modern IDEs leverage static typing to offer advanced features like code completion, refactoring, and static analysis. These tools can automatically detect issues, suggest fixes, and safely refactor code, enhancing developer productivity and reducing the likelihood of introducing bugs during refactoring.
+   - Build a full-stack analytics pipeline using Python, SQLAlchemy, and SQLite to handle cached generated reports to limit cost.
 
-```csharp
-// Refactoring example: Renaming a method in C#
-public class Calculator {
-    public int Add(int a, int b) {
-        return a + b;
-    }
-}
+3. Enabling Dynamic Report Generation
 
-// After refactoring `Add` to `Sum`, all references are automatically updated.
-public class Calculator {
-    public int Sum(int a, int b) {
-        return a + b;
-    }
-}
-```
+   - Sentiment distribution charts (pie & bar graphs)
 
-## Performance Optimizations
+   - Keyword clouds to highlight frequent topics
 
-Static typing can lead to better performance. Since types are known at compile time, compilers can optimize the generated code more effectively. This can result in faster execution times and lower resource consumption.
+   - Top phrases analysis using N-grams for contextual insights
+
+   - Implement PDF report generation using jsPDF, allowing users to download insights for further analysis.
+
+## The Product
+
+By the end of the project, we delivered a fully functional analytics dashboard that fulfilled all of the goals above and allowed PlaceSpeak to:
+
+- Analyze large volumes of public feedback from their network using AI
+- Visualize trends through interactive charts and word clouds
+- Generate downloadable reports for users and clients
 
 ## Conclusion
 
-Static typing offers numerous benefits that contribute to the development of robust, efficient, and maintainable software. By catching errors early, enhancing readability, facilitating tooling, and enabling optimizations, static typing is an invaluable asset for developers. As the software industry continues to mature, the importance of static typing in ensuring code quality and performance cannot be overstated. Whether you're working on a large-scale enterprise application or a small project, embracing static typing can lead to better software development outcomes.
+Working on the PlaceSpeak-BCIT ISSP project was an incredible learning experience. It reinforced the importance of AI-driven analytics in public engagement and allowed me to contribute to a solution that helps organizations make data-driven decisions.
+
+I’m excited to continue exploring AI, NLP, and data visualization in future projects!
+
+<style>{`
+  .blue-link a {
+    color: blue;
+    text-decoration-color: blue;
+  }
+  .blue-link a:hover {
+    color: darkblue; /* Hover effect */
+  }
+`}</style>
