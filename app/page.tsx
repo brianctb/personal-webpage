@@ -1,6 +1,6 @@
 "use client";
 
-import { introduction, workExperiences, educations, skills, interests } from "./interface/homepage";
+import { resumeUrl, introduction, workExperiences, educations, skills, interests } from "./interface/homepage";
 import { PillGroup } from "./components/pillGroup";
 import React from "react";
 import { formatDate } from "./utils/date/format";
@@ -36,6 +36,19 @@ export default function HomePage() {
             {paragraph}
           </p>
         ))}
+        <p className="section-paragraph mt-4">
+          You can view my resume{" "}
+          <a
+            href={resumeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 dark:text-blue-400 hover:underline font-medium"
+            aria-label="Open resume in new tab"
+          >
+            here
+          </a>
+          .
+        </p>
       </section>
       <section className="mb-8">
         <div className="flex flex-row items-center gap-3">

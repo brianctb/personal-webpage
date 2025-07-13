@@ -29,13 +29,15 @@ export interface WorkExperience {
     duties?: string[];
 }
 
+export const resumeUrl = "/pdf/brian_resume.pdf";
+
 export const introduction: Introduction = {
     title: "Introduction",
     content: [
       "Hello! I'm a recent graduate from the British Columbia Institute of Technology (BCIT) and a software engineer passionate about building innovative solutions. With a strong background in web development, data science, and Mathematics, I'm particularly excited about how AI is transforming our industry — enabling entirely new applications.",
       "I thrive on tackling complex problems and building efficient, scalable systems. My experience spans multiple programming languages, frameworks, but I'm now focusing on AI-driven development. I believe AI isn't replacing engineers; it's empowering us to solve bigger challenges, and I'll be working on projects that revolve around this theme.",
       "When I'm not coding, you'll find me snowboarding down mountains, hiking scenic trails, or diving into video games. I'm always eager to learn—whether it's a cutting-edge tech stack or a better way to merge AI with human creativity."
-  ]
+    ]
 }
 
 export const skills: Skill[] = [
