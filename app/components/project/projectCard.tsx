@@ -63,7 +63,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
                                 <p className="mt-2 w-full text-xl text-left lg:text-center text-neutral-700 dark:text-neutral-300">
                                     {"Duties"}
                                 </p>
-                                <ul className="list-disc list-outside pl-5 text-neutral-400 w-full text-left lg:text-center">
+                                <ul className="list-disc list-outside pl-5 text-neutral-400 w-full text-left">
                                     {project.duties.map((duty, index) => (
                                         <li key={index}>{duty}</li>
                                     ))}

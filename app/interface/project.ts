@@ -11,7 +11,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     name: "AI Storyteller",
-    description: "A web app that generates stories using OpenAI API. It allows user to control the story's direction and style, it even includdes a plot twist feature for added excitement!",
+    description: "A web app that generates stories using OpenAI API. It allows user to control the story's direction and style, it even includes a plot twist feature for added excitement!",
     publishedAt: "2025-04-30",
     duties: [
       "Developed backend API implementing OpenAI integration for dynamic story generation.",
