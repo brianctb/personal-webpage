@@ -4,10 +4,21 @@ import { useState } from "react";
 import { Project } from "app/interface/project";
 import { formatDate } from "app/utils/date/format";
 import { PillGroup } from "../pillGroup";
+import { useEffect } from "react";
+
+const DEFAULT_IMAGE = `/image/question_mark.png`;
 
 export const ProjectCard = ({ project }: { project: Project }) => {
 
     const [isExpanded, setIsExpanded] = useState(false);
+    const [imgSrc, setImgSrc] = useState(DEFAULT_IMAGE);
+
+    useEffect(() => {
+        const img = new Image();
+        img.src = `/image/${project.imagePath}`;
+        img.onload = () => setImgSrc(img.src);
+        img.onerror = () => setImgSrc(DEFAULT_IMAGE);
+    }, [project.imagePath]);
 
     return (
         <article className="mb-4 p-4 rounded-2xl bg-neutral-900 w-full lg:w-2xl">
@@ -15,9 +26,9 @@ export const ProjectCard = ({ project }: { project: Project }) => {
                 <div className="flex w-full">
                     <div className="flex-1 flex justify-center">
                         <img
-                            src={`/image/${project.imagePath}`}
+                            src={imgSrc}
                             alt={project.name}
-                            className="w-30 h-20"
+                            className="w-50 h-30 object-cover rounded-lg"
                         />
                     </div>
                     <div className="flex-2 flex justify-center items-center">

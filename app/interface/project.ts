@@ -20,7 +20,7 @@ export const projects: Project[] = [
       "Configured PostgreSQL database including schema design, user privilege management"
     ],
     techStack: ["JavaScript", "Node.js", "Express", "PostgreSQL", "OpenAI API"],
-    imagePath: "question_mark.png",
+    imagePath: "AI-Storyteller.png",
   },
   {
     name: "Canada Employment Visualization",
@@ -28,6 +28,6 @@ export const projects: Project[] = [
     publishedAt: "2023-06-15",
     techStack: ["JavaScript", "Python","React", "Node.js", "MongoDB", "Chart.js"],
     link: "https://canada-employment-visualization.vercel.app",
-    imagePath: "question_mark.png"
+    imagePath: "employment-visualization.png"
   }
 ];
